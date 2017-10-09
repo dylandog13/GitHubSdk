@@ -15,7 +15,7 @@
  */
 
 apply plugin: "com.android.library"
-apply plugin: 'bintray-release'
+//apply plugin: 'bintray-release'
 
 android {
     compileSdkVersion 28
@@ -63,6 +63,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+/*
 publish {
     bintrayUser = BINTRAY_USER
     bintrayKey = BINTRAY_KEY
@@ -74,3 +75,4 @@ publish {
     website = SITE_URL
     licences = ['Apache-2.0']
 }
+*/
