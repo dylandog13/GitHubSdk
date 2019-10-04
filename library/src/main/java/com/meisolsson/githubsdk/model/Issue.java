@@ -107,6 +107,10 @@ public abstract class Issue implements Parcelable {
     @Nullable
     public abstract Repository repository();
 
+    @Json(name = "author_association")
+    @Nullable
+    public abstract AuthorAssociation authorAssociation();
+
     @Nullable
     public abstract Reactions reactions();
 
@@ -165,6 +169,8 @@ public abstract class Issue implements Parcelable {
         public abstract Builder reactions(Reactions reactions);
 
         public abstract Builder assignees(@Nullable List<User> assignees);
+
+        public abstract Builder authorAssociation(AuthorAssociation authorAssociation);
 
         public abstract Issue build();
     }

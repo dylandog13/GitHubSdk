@@ -61,6 +61,10 @@ public abstract class PullRequest implements Parcelable {
     @Nullable
     public abstract Integer comments();
 
+    @Json(name = "review_comments")
+    @Nullable
+    public abstract Integer reviewComments();
+
     @Nullable
     public abstract Integer number();
 
@@ -80,6 +84,9 @@ public abstract class PullRequest implements Parcelable {
     public abstract Boolean mergeable();
 
     @Nullable
+    public abstract Boolean rebaseable();
+
+    @Nullable
     public abstract Boolean merged();
 
     @Json(name = "mergeable_state")
@@ -94,6 +101,14 @@ public abstract class PullRequest implements Parcelable {
 
     @Nullable
     public abstract User assignee();
+
+    @Json(name = "requested_reviewers")
+    @Nullable
+    public abstract List<User> requestedReviewers();
+
+    @Json(name = "maintainer_can_modify")
+    @Nullable
+    public abstract Boolean isModifiableByMaintainer();
 
     @Nullable
     public abstract List<Label> labels();
@@ -155,6 +170,10 @@ public abstract class PullRequest implements Parcelable {
     @Nullable
     public abstract User mergedBy();
 
+    @Json(name = "author_association")
+    @Nullable
+    public abstract AuthorAssociation authorAssociation();
+
     public abstract Builder toBuilder();
 
     public static Builder builder() {
@@ -179,6 +198,8 @@ public abstract class PullRequest implements Parcelable {
 
         public abstract Builder comments(Integer comments);
 
+        public abstract Builder reviewComments(Integer reviewComments);
+
         public abstract Builder number(Integer number);
 
         public abstract Builder additions(Integer additions);
@@ -191,6 +212,8 @@ public abstract class PullRequest implements Parcelable {
 
         public abstract Builder mergeable(Boolean mergeable);
 
+        public abstract Builder rebaseable(Boolean rebaseable);
+
         public abstract Builder merged(Boolean merged);
 
         public abstract Builder mergeableState(MergeableState mergeableState);
@@ -200,6 +223,10 @@ public abstract class PullRequest implements Parcelable {
         public abstract Builder user(User user);
 
         public abstract Builder assignee(User assignee);
+
+        public abstract Builder requestedReviewers(List<User> reviewers);
+
+        public abstract Builder isModifiableByMaintainer(Boolean modifiable);
 
         public abstract Builder labels(List<Label> labels);
 
@@ -230,6 +257,8 @@ public abstract class PullRequest implements Parcelable {
         public abstract Builder mergedAt(Date mergedAt);
 
         public abstract Builder mergedBy(User mergedBy);
+
+        public abstract Builder authorAssociation(AuthorAssociation authorAssociation);
 
         public abstract PullRequest build();
     }
