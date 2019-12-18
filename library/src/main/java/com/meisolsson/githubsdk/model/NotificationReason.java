@@ -28,5 +28,6 @@ public enum NotificationReason {
     @Json(name = "team_mention") TeamMention,
     @Json(name = "state_change") StateChange,
     @Json(name = "security_alert") SecurityAlert,
-    @Json(name = "assign") Assign
+    @Json(name = "assign") Assign,
+    @Json(name = "") Unset // sent when updating subscriptions
 }
