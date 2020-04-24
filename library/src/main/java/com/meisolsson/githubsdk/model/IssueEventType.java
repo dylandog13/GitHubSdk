@@ -28,6 +28,7 @@ public enum IssueEventType {
     @Json(name = "commented") Commented,
     @Json(name = "committed") Committed,
     @Json(name = "connected") Connected,
+    @Json(name = "convert_to_draft") ConvertToDraft,
     @Json(name = "converted_note_to_issue") ConvertedNoteToIssue,
     /*TODO Is this working correctly? This is used by the issue timeline api which is not
         yet stable. When it' stable this needs to be tested*/
@@ -61,5 +62,6 @@ public enum IssueEventType {
     @Json(name = "unlocked") Unlocked,
     @Json(name = "unmarked_as_duplicate") UnmarkedAsDuplicate,
     @Json(name = "unpinned") Unpinned,
-    @Json(name = "unsubscribed") Unsubscribed
+    @Json(name = "unsubscribed") Unsubscribed,
+    @Json(name = "user_blocked") UserBlocked
 }
