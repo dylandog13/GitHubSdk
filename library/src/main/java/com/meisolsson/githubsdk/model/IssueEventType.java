@@ -35,6 +35,7 @@ public enum IssueEventType {
     @Json(name = "cross-referenced") CrossReferenced,
     @Json(name = "demilestoned") Demilestoned,
     @Json(name = "deployed") Deployed,
+    @Json(name = "disconnected") Disconnected,
     @Json(name = "head_ref_deleted") HeadRefDeleted,
     @Json(name = "head_ref_force_pushed") HeadRefForcePushed,
     @Json(name = "head_ref_restored") HeadRefRestored,
