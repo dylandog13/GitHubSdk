@@ -19,6 +19,7 @@ package com.meisolsson.githubsdk.core;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.meisolsson.githubsdk.model.ReviewState;
 import com.meisolsson.githubsdk.service.OAuthService;
 import com.squareup.moshi.Moshi;
 
@@ -40,6 +41,7 @@ public class ServiceGenerator {
     public final static Moshi moshi = new Moshi.Builder()
             .add(new GitHubEventAdapter())
             .add(new GitHubPayloadAdapter())
+            .add(ReviewState.class, new CaseInsensitiveEnumJsonAdapter(ReviewState.class))
             .add(MyAdapterFactory.create())
             .add(new FormattedHtmlAdapter())
             .add(new FormattedTimeAdapter())
