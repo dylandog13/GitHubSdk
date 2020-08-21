@@ -38,6 +38,7 @@ import com.meisolsson.githubsdk.model.payload.MembershipPayload;
 import com.meisolsson.githubsdk.model.payload.PageBuildPayload;
 import com.meisolsson.githubsdk.model.payload.PublicPayload;
 import com.meisolsson.githubsdk.model.payload.PullRequestPayload;
+import com.meisolsson.githubsdk.model.payload.PullRequestReviewPayload;
 import com.meisolsson.githubsdk.model.payload.PullRequestReviewCommentPayload;
 import com.meisolsson.githubsdk.model.payload.PushPayload;
 import com.meisolsson.githubsdk.model.payload.ReleasePayload;
@@ -88,6 +89,8 @@ public class GitHubPayloadTypeAdapter implements TypeAdapter<GitHubPayload>{
                 return PublicPayload.createFromParcel(in);
             case PullRequestEvent:
                 return PullRequestPayload.createFromParcel(in);
+            case PullRequestReviewEvent:
+                return PullRequestReviewPayload.createFromParcel(in);
             case PullRequestReviewCommentEvent:
                 return PullRequestReviewCommentPayload.createFromParcel(in);
             case PushEvent:

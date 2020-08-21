@@ -35,6 +35,7 @@ public enum GitHubEventType {
     PageBuildEvent,
     PublicEvent,
     PullRequestEvent,
+    PullRequestReviewEvent,
     PullRequestReviewCommentEvent,
     PushEvent,
     ReleaseEvent,
