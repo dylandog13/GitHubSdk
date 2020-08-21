@@ -39,6 +39,7 @@ import com.meisolsson.githubsdk.model.payload.MembershipPayload;
 import com.meisolsson.githubsdk.model.payload.PageBuildPayload;
 import com.meisolsson.githubsdk.model.payload.PublicPayload;
 import com.meisolsson.githubsdk.model.payload.PullRequestPayload;
+import com.meisolsson.githubsdk.model.payload.PullRequestReviewPayload;
 import com.meisolsson.githubsdk.model.payload.PullRequestReviewCommentPayload;
 import com.meisolsson.githubsdk.model.payload.PushPayload;
 import com.meisolsson.githubsdk.model.payload.ReleasePayload;
@@ -186,6 +187,8 @@ public class GitHubEventAdapter {
                 return PublicPayload.jsonAdapter(moshi).fromJson(json);
             case PullRequestEvent:
                 return PullRequestPayload.jsonAdapter(moshi).fromJson(json);
+            case PullRequestReviewEvent:
+                return PullRequestReviewPayload.jsonAdapter(moshi).fromJson(json);
             case PullRequestReviewCommentEvent:
                 return PullRequestReviewCommentPayload.jsonAdapter(moshi).fromJson(json);
             case PushEvent:
@@ -260,6 +263,9 @@ public class GitHubEventAdapter {
                 break;
             case PullRequestEvent:
                 PullRequestPayload.jsonAdapter(moshi).toJson(writer, (PullRequestPayload) payload);
+                break;
+            case PullRequestReviewEvent:
+                PullRequestReviewPayload.jsonAdapter(moshi).toJson(writer, (PullRequestReviewPayload) payload);
                 break;
             case PullRequestReviewCommentEvent:
                 PullRequestReviewCommentPayload.jsonAdapter(moshi).toJson(writer, (PullRequestReviewCommentPayload) payload);

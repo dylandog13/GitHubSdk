@@ -35,6 +35,7 @@ import com.meisolsson.githubsdk.model.payload.MembershipPayload;
 import com.meisolsson.githubsdk.model.payload.PageBuildPayload;
 import com.meisolsson.githubsdk.model.payload.PublicPayload;
 import com.meisolsson.githubsdk.model.payload.PullRequestPayload;
+import com.meisolsson.githubsdk.model.payload.PullRequestReviewPayload;
 import com.meisolsson.githubsdk.model.payload.PullRequestReviewCommentPayload;
 import com.meisolsson.githubsdk.model.payload.PushPayload;
 import com.meisolsson.githubsdk.model.payload.ReleasePayload;
@@ -96,6 +97,8 @@ public class GitHubPayloadAdapter {
             return PublicPayload.jsonAdapter(moshi).toJson((PublicPayload) payload);
         } else if (payload instanceof PullRequestPayload) {
             return PullRequestPayload.jsonAdapter(moshi).toJson((PullRequestPayload) payload);
+        } else if (payload instanceof PullRequestReviewPayload) {
+            return PullRequestReviewPayload.jsonAdapter(moshi).toJson((PullRequestReviewPayload) payload);
         } else if (payload instanceof PullRequestReviewCommentPayload) {
             return PullRequestReviewCommentPayload.jsonAdapter(moshi).toJson((PullRequestReviewCommentPayload) payload);
         } else if (payload instanceof PushPayload) {
