@@ -100,6 +100,10 @@ public abstract class IssueEvent implements Parcelable {
     @Nullable
     public abstract List<User> requestedReviewers();
 
+    @Json(name = "requested_team")
+    @Nullable
+    public abstract Team requestedTeam();
+
     @Json(name = "dismissed_review")
     @Nullable
     public abstract DismissedReview dismissedReview();
